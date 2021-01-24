@@ -31,3 +31,6 @@ Folders:<br>
 
 `cd etc` and then `sudo cat shadow' or `sudo less /etc/shadow`
 - Important files here are the shadow (most imp as it contains the hashed pw) and the passwd - both containing the usernames
+- Below is an extract from a sample shadow file. Notice the hashed pw
+
+`adam:$6$v2/mxc36Kx4HWHuk$41kXVPzWJEZJM3i2.qm0xnZjl2RTQhvIRV2nhYks.vr4c7t0KthtVeneg1ctxDemgdqH1hDKwvbEKAQnYQV/n1:18562:0:99999:7:::`
