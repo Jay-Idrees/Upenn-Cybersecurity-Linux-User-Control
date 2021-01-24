@@ -28,3 +28,6 @@ Folders:<br>
 `cd home`
 
 > Getting to the etc folder
+
+`cd etc` and then `sudo cat shadow' or `sudo less /etc/shadow`
+- Important files here are the shadow (most imp as it contains the hashed pw) and the passwd - both containing the usernames
