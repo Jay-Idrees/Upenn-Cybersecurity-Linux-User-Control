@@ -3,7 +3,7 @@
 
 Date of publication: 1/22/2021
 
-I am writing this readme as reinforce things I leaned during the University of Pensylvania Cybersecurity Engineer certification training.
+I am writing this readme to reinforce and document things I leaned during the University of Pensylvania Cybersecurity Engineer certification training so I can circle back to it later
 
 ## File structure
 
@@ -25,11 +25,11 @@ Folders:<br>
 
 > Getting to the user folders
 
-`cd home`
+`cd home/`
 
 > Getting to the etc folder
 
-`cd etc` and then `sudo cat shadow' or `sudo less /etc/shadow`
+`cd etc` and then `sudo cat shadow` or `sudo less /etc/shadow`
 - Important files here are the shadow (most imp as it contains the hashed pw) and the passwd - both containing the usernames
 - Below is an extract from a sample shadow file. Notice the hashed pw
 
