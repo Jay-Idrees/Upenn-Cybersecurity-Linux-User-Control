@@ -14,7 +14,7 @@ Folders:<br>
 - `/bin` - Contains exe files. It has applications and files for all the commands that are accessible to a user
 - `/sbin` - This directory is for adminstrators and contains special programs that should be inaccessible to normal users. These include programs like `adduser` and `passwd`
 - `/var`  - This folder contains the system files that change over time such as the log files (`var/log`)
-- `/temp` - This folder contains temporary files that get deleted 
+- `/temp` - This folder contains temporary files that get deleted on reboot. Hackers commonly store their malacious files 
 
 
 
@@ -49,3 +49,23 @@ Folders:<br>
 
 - Some important files to keep in mind ` cd var/log/ufw.log` which stores attempts by the user to visit unauthorized websites and `cd var/log/auth.log` which stores infomation regarding failed login attempts to login as root
 
+# Managing the Process in Linux
+
+Three commands to keep in mind:
+-  `top` for generating the list of active processess and obtaining an overview of memory consumption. Note that if you type `x` it will display actie processes in the order of CPU consumption
+-  `ps`  To look at specific processes that are running
+-  `kill` To end processes 
+
+- After running these commands you can come back to the terminal by typing `q` 
+
+**Dynamic Analysis** is when we run a malacious script in a controlled environment such as a virtural machine to control 
+- Note that when you use `top` the PID is the process id that is used to refer to the process when you want to kill it. 
+
+- Example commands:
+
+`ps aux | grep bash`
+
+- `a` displays all the processes involving the terminal
+- `u` specifies the username that started the process
+- `x` displays all the processes that DO NOT involve terminal - so toghether with a and x you can look at all the processes there are
+- `grep bash` here is further tailoriing to display only the shortlist of the processes called name
