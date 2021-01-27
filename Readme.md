@@ -5,7 +5,16 @@ Date of publication: 1/22/2021
 
 I am writing this readme to reinforce and document things I leaned during the University of Pensylvania Cybersecurity Engineer certification training so I can circle back to it later
 
+## Random useful things
+`ctrl-k` will delete the current line in Nano
+`cd /home/sysadmin`
+`sudo cp /etc/shadow shadow_copy` This command with copy the shadow file from the etc folder to the current directory and then name the copied file shadow_copy
+
+- If you hit tab while partially typing the desired file name then it will display a list of all the filenames in the directory that hace the overlapping name spellings. 
+
 ## File structure
+
+- Every file and program on Linux have permissions that can be controlled for a particular user
 
 Folders:<br>
 - `/home` - Contains user info, files: passwd and shadow (shadow contains the hash, passwd doesnt, but both contain usernames that can be hacked. These two files are therefore very important to protect agaist hackers)
@@ -49,7 +58,7 @@ Folders:<br>
 
 - Some important files to keep in mind ` cd var/log/ufw.log` which stores attempts by the user to visit unauthorized websites and `cd var/log/auth.log` which stores infomation regarding failed login attempts to login as root
 
-# Managing the Process in Linux
+# Managing the Processws in Linux
 
 Three commands to keep in mind:
 -  `top` for generating the list of active processess and obtaining an overview of memory consumption. Note that if you type `x` it will display actie processes in the order of CPU consumption
@@ -58,14 +67,47 @@ Three commands to keep in mind:
 
 - After running these commands you can come back to the terminal by typing `q` 
 
-**Dynamic Analysis** is when we run a malacious script in a controlled environment such as a virtural machine to control 
+**Dynamic Analysis** is when we run a malacious script in a controlled environment such as a virtural machine to assess 
 - Note that when you use `top` the PID is the process id that is used to refer to the process when you want to kill it. 
 
 - Example commands:
 
-`ps aux | grep bash`
+`ps aux | grep bash` or `ps aux | less`
 
 - `a` displays all the processes involving the terminal
 - `u` specifies the username that started the process
 - `x` displays all the processes that DO NOT involve terminal - so toghether with a and x you can look at all the processes there are
 - `grep bash` here is further tailoriing to display only the shortlist of the processes called name
+
+- Note that in order to kill a process it must be referred by its PID or process id. 
+
+- Killing a process
+
+`sudo killall stress` 
+
+This effectively kills all the processes and the sub-processes that were initiated by theat process. 
+
+
+
+## Installing packages
+
+Linux has its own command for installing packages like in npm instal for node packages linux packages can be installed with
+
+`sudo apt -y install package_name another_packagname`
+
+- Note how multiple packages can be installed at the same time and `-y` lets you atromatically answer yes to all the question prompts before installation. 
+
+- Examples of the package names: 
+
+`emacs` is a files editor
+
+## John the Ripper for password cracking
+
+- The software accepts username:hash info that can be provided in the form of a shell script. If we just copy paste from the shadow will - the whole row associated with a particular user information. Below are some steps in the sequence
+
+1. Copy the shadow file `sudo cp /etc/shadow shadow_copy`
+2. Delete the irelevent hashes/usernames Ctrl+k to delete the entire line
+3. Crack the password `sudo john shadow_copy` where shadow_copy is the name of the file- If you make a copy from the rot directory it will carry the same set of permisions and therefore we are using sudo. 
+
+- Note that the length of the password is more important security wise 16 characters is very secure 
+ 8 characters is cracked instantly. 12 in 4 weeks, 16 in 35 thousand years
