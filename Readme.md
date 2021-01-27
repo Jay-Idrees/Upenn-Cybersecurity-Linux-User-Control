@@ -58,7 +58,7 @@ Folders:<br>
 
 - Some important files to keep in mind ` cd var/log/ufw.log` which stores attempts by the user to visit unauthorized websites and `cd var/log/auth.log` which stores infomation regarding failed login attempts to login as root
 
-# Managing the Processws in Linux
+# Managing the Processes in Linux
 
 Three commands to keep in mind:
 -  `top` for generating the list of active processess and obtaining an overview of memory consumption. Note that if you type `x` it will display actie processes in the order of CPU consumption
@@ -81,7 +81,7 @@ Three commands to keep in mind:
 
 - Note that in order to kill a process it must be referred by its PID or process id. 
 
-- Killing a process
+- Killing a process called stress
 
 `sudo killall stress` 
 
@@ -105,7 +105,7 @@ Linux has its own command for installing packages like in npm instal for node pa
 
 - The software accepts username:hash info that can be provided in the form of a shell script. If we just copy paste from the shadow will - the whole row associated with a particular user information. Below are some steps in the sequence
 
-1. Copy the shadow file `sudo cp /etc/shadow shadow_copy`
+1. Copy the shadow file `sudo cp /etc/shadow shadow_copy` typically only the root user has access to the shadow file
 2. Delete the irelevent hashes/usernames Ctrl+k to delete the entire line
 3. Crack the password `sudo john shadow_copy` where shadow_copy is the name of the file- If you make a copy from the rot directory it will carry the same set of permisions and therefore we are using sudo. 
 
