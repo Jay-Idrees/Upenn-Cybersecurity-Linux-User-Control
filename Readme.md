@@ -106,7 +106,9 @@ Linux has its own command for installing packages like in npm instal for node pa
 - The software accepts username:hash info that can be provided in the form of a shell script. If we just copy paste from the shadow will - the whole row associated with a particular user information. Below are some steps in the sequence
 
 1. Copy the shadow file `sudo cp /etc/shadow shadow_copy` typically only the root user has access to the shadow file
-2. Delete the irelevent hashes/usernames Ctrl+k to delete the entire line
+
+2. Delete the irrelevent hashes/usernames  (Ctrl+k to delete the entire line in the nano editor)
+
 3. Crack the password `sudo john shadow_copy` where shadow_copy is the name of the file- If you make a copy from the rot directory it will carry the same set of permisions and therefore we are using sudo. 
 
 - Note that the length of the password is more important security wise 16 characters is very secure 
