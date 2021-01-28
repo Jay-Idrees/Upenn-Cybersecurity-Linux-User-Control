@@ -162,7 +162,22 @@ vagrant ALL=(ALL:ALL) NOPASSWD:ALL
 #includedir /etc/sudoers.d
 max  ALL=(ALL:ALL) /usr/bin/less
 ```
-- [`USER` or %`GROUP`]  `HOST`=(`USER`:`GROUP`) `COMMAND` this is the general format for permissions in sudoers
+- [`USER` or %`GROUP`]  `HOST`=(`USER`:`GROUP`) `COMMAND` this is the general format for permissions in sudoers. Also note that host is the machine itself which the admin can control e-g if there is a need to limit access to specific files on some machines
 
+** Adding a new command permission for a user **
+
+- sudoers file can be edited by typing `visudo` in the terminal - This command is like the nano editor for sudoers file - just the visudo is sufficient- no need to add sudoers or file name
+
+- open the sudoers file and paste something like below
+`john  ALL=(ALL:ALL) /usr/bin/apt` This gives John access to the apt command 
+
+- To exit the current user type `exit` then you will be taken to the root directory
+
+- type `visudo` to edit sudodoers
+
+- Now check to see if the command can be searched for the max user 
+`grep apt etc/sudoers` This would display the entire line of text from sudoers and you can see the max username. This is an important trick as essentially you can search for a specific comand in the sudoers to see which users have access to it
+
+then re-test by running `su max` and then `sudo apt update` - Note that using sudo here is important
 
 
