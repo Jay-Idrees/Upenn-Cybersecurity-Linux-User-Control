@@ -123,11 +123,11 @@ Linux has its own command for installing packages like in npm instal for node pa
  Permits application of the principal of least privilige by limiting the control of a user to only specific commands and allowing temporary escalation to the root privilidge only for the time when a command is run. In other words it will only alow the user to complete actions that he/she has access to. Sudo also keeps a log of all the commands used by the user 
 
  - Related commands:
-    `whoami` Reveals the current username when this command is typed in the terminal
-    `su`  Switching users
-    `sudoers` file containing the list of users and descriptions of their access
-    `chown` 
-    `exit`
+ - `whoami` Reveals the current username when this command is typed in the terminal
+ - `su`  Switching users
+ - `sudoers` file containing the list of users and descriptions of their access
+ - `chown` 
+ - `exit`
 
 > Switching to the root directory so you can run root level commands. This command must be used to switch to the root directory before you can make changes to the user access. 
 
