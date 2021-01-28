@@ -122,12 +122,13 @@ Linux has its own command for installing packages like in npm instal for node pa
 
  Permits application of the principal of least privilige by limiting the control of a user to only specific commands and allowing temporary escalation to the root privilidge only for the time when a command is run. In other words it will only alow the user to complete actions that he/she has access to. Sudo also keeps a log of all the commands used by the user 
 
- - Related commands:
+ **Related commands**
  - `whoami` Reveals the current username when this command is typed in the terminal
  - `su`  Switching users
- - `sudoers` file containing the list of users and descriptions of their access
+ - `sudoers` file containing the list of users and descriptions of their access - must be used with cat, less etc 
  - `chown` 
- - `exit`
+ - `exit` exits the user and takes you to the default user sysadmin 
+ - `su -l` lists all the commands the exisiting user has access to
 
 > Switching to the root directory so you can run root level commands. This command must be used to switch to the root directory before you can make changes to the user access. 
 
@@ -166,7 +167,9 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 ## Giving existing user access to a new command
 
-- sudoers file can be edited by typing `visudo` in the terminal - This command is like the nano editor for sudoers file - just the visudo is sufficient- no need to add sudoers or file name
+- `sudoers` file can be edited by typing `visudo` in the terminal - This command is like the nano editor for sudoers file - just the visudo is sufficient- no need to add sudoers or file name
+
+- `sudo -lU usename` for listing commands to which the user has access to. Or just type `sudo -l` to list for the current user
 
 - open the sudoers file and paste something like below
 `john  ALL=(ALL:ALL) /usr/bin/apt` This gives John access to the apt command 
