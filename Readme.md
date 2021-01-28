@@ -3,12 +3,13 @@
 
 Date of publication: 1/22/2021
 
-I am writing this readme to reinforce and document things I leaned during the University of Pensylvania Cybersecurity Engineer certification training so I can circle back to it later
+I am writing this readme to reinforce and document things I leant during the University of Pensylvania Cybersecurity Engineer certification training so I can circle back to it later
 
 ## Random useful things
 `ctrl-k` will delete the current line in Nano
 `cd /home/sysadmin`
 `sudo cp /etc/shadow shadow_copy` This command with copy the shadow file from the etc folder to the current directory and then name the copied file shadow_copy
+- `sudo` stands for superuser do. It also keeps a log of all the commands used by a particular user
 
 - If you hit tab while partially typing the desired file name then it will display a list of all the filenames in the directory that hace the overlapping name spellings. 
 
@@ -113,3 +114,7 @@ Linux has its own command for installing packages like in npm instal for node pa
 
 - Note that the length of the password is more important security wise 16 characters is very secure 
  8 characters is cracked instantly. 12 in 4 weeks, 16 in 35 thousand years
+
+
+ ## Magic of the sudo command in linux
+
