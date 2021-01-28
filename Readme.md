@@ -164,7 +164,7 @@ max  ALL=(ALL:ALL) /usr/bin/less
 ```
 - [`USER` or %`GROUP`]  `HOST`=(`USER`:`GROUP`) `COMMAND` this is the general format for permissions in sudoers. Also note that host is the machine itself which the admin can control e-g if there is a need to limit access to specific files on some machines
 
-**Adding a new command permission for a user**
+## Giving existing user access to a new command
 
 - sudoers file can be edited by typing `visudo` in the terminal - This command is like the nano editor for sudoers file - just the visudo is sufficient- no need to add sudoers or file name
 
