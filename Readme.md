@@ -13,6 +13,8 @@ I am writing this readme to reinforce and document things I leant during the Uni
 
 - If you hit tab while partially typing the desired file name then it will display a list of all the filenames in the directory that hace the overlapping name spellings. 
 
+- When you are the root user nothing in the system will stop you- you wont be asked about any password prompts. 
+
 ## File structure
 
 - Every file and program on Linux have permissions that can be controlled for a particular user
@@ -116,5 +118,51 @@ Linux has its own command for installing packages like in npm instal for node pa
  8 characters is cracked instantly. 12 in 4 weeks, 16 in 35 thousand years
 
 
- ## Magic of the sudo command in linux
+ ## The Magical `sudo` and its Sisters in Linux
+
+ Permits application of the principal of least privilige by limiting the control of a user to only specific commands and allowing temporary escalation to the root privilidge only for the time when a command is run. In other words it will only alow the user to complete actions that he/she has access to. Sudo also keeps a log of all the commands used by the user 
+
+ - Related commands:
+    `whoami` Reveals the current username when this command is typed in the terminal
+    `su`  Switching users
+    `sudoers` file containing the list of users and descriptions of their access
+    `chown` 
+    `exit`
+
+> Switching to the root directory so you can run root level commands. This command must be used to switch to the root directory before you can make changes to the user access. 
+
+`sudo su` 
+`root@UbuntuDesktop:/etc#` This is what the terminal prompt will look like 
+
+> Checking which user you are currently to confirm that you are now in the root
+
+`whoami`
+
+- you can test if whether you have sudo priviidges by trying to install package updates
+
+`apt update`
+
+> Inspecting the sudoers file. This file contains all the users and groups and the details regarding their access limits
+
+- Note that you have to be in the root folder and then navigate to etc where the sudoers file is located. It can be opened with the following command when you are inside the etc folder
+`cat sudoers`  This file looks something like this
+
+```
+# User privilege specification
+root	ALL=(ALL:ALL) ALL
+vagrant ALL=(ALL:ALL) NOPASSWD:ALL
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo	ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "#include" directives:
+
+#includedir /etc/sudoers.d
+max  ALL=(ALL:ALL) /usr/bin/less
+```
+- [`USER` or %`GROUP`]  `HOST`=(`USER`:`GROUP`) `COMMAND` this is the general format for permissions in sudoers
+
+
 
