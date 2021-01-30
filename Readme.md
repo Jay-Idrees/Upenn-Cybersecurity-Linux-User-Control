@@ -21,7 +21,7 @@ I am writing this readme to reinforce and document things I leant during the Uni
 
 - Linus recognizes the users and user groups by their ids not the name root id is 0, administrative accounts are 1-999 and normal user account ids are usually 1000+
 
-- After using `less` while you are in the middle of viewing the file, if you type `!bash` it will take you to the root directory
+- After using `less` while you are in the middle of viewing the file, if you type `!bash` it will take you to the root directory. This is a trick that hackers use to get into the 
 
 ## File structure
 
@@ -181,11 +181,20 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 **Creating a user or usergroup**
 
+
+ - Creating a new username - it will prompt for password
+`sudo adduser joseph`
+
+`groups joseph` Displays all the groups this username has been assigned to
+
+- Creating a new group
+`sudo addgroup developers` If you are in the root directory already then you do not need to use sudo
+
 - Creating a folder by the new username in the home directory e-g mike
 
 `mkdir /home/mike`
 
-> Giving the mike username access to the mike folder
+- Giving the mike username access to the mike folder
 
 `chown -R mike: /home/mike`
  Here R is the recursive flag which ensures that all the files in the user's home folder as well 
