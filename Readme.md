@@ -257,9 +257,9 @@ Below is what it shows
                                 size date+time of last modification and then file name
 `-rw-r--r-- 1 sysadmin sysadmin 1489 Jan 20 16:22 0310_Dealer_schedule`
 
-- r=read, w=write and then x=execute(not applicabel to the file above), the sysadmin sysadmin are the username and the usergroup, then its folowed by the file size, date and time and the size of the file  
+- r=read, w=write and then x=execute(not applicable to the file above), the sysadmin sysadmin are the username and the usergroup, then its folowed by the file size, date and time and the size of the file  
 
-
+-
 
 
 
