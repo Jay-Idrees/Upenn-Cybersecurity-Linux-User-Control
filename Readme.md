@@ -21,6 +21,8 @@ I am writing this readme to reinforce and document things I leant during the Uni
 
 - Linus recognizes the users and user groups by their ids not the name root id is 0, administrative accounts are 1-999 and normal user account ids are usually 1000+
 
+- After using `less` while you are in the middle of viewing the file, if you type `!bash` it will take you to the root directory
+
 ## File structure
 
 - Every file and program on Linux have permissions that can be controlled for a particular user
@@ -132,7 +134,7 @@ Linux has its own command for installing packages like in npm instal for node pa
  - `whoami` Reveals the current username when this command is typed in the terminal
  - `su`  Switching users
  - `sudoers` file containing the list of users and descriptions of their access - must be used with cat, less etc 
- - `chown` 
+ - `chown` Asigns uername to user folder
  - `exit` exits the user and takes you to the default user sysadmin 
  - `su -l` lists all the commands the exisiting user has access to
 
@@ -171,15 +173,22 @@ max  ALL=(ALL:ALL) /usr/bin/less
 ```
 - [`USER` or %`GROUP`]  `HOST`=(`USER`:`GROUP`) `COMMAND` this is the general format for permissions in sudoers. Also note that host is the machine itself which the admin can control e-g if there is a need to limit access to specific files on some machines
 
+## Adding a user to the sudo group
 
+`sudo usermod -aG sudo sally` aG asign group. Note that the sudo privilidges are also configured in the sudoers file
 
 ## Admin CRUD functions: CREAT READ UPDATE AND DELETE functions in Linux
 
 **Creating a user or usergroup**
 
+- Creating a folder by the new username in the home directory e-g mike
 
+`mkdir /home/mike`
 
+> Giving the mike username access to the mike folder
 
+`chown -R mike: /home/mike`
+ Here R is the recursive flag which ensures that all the files in the user's home folder as well 
 **Reading existing user excess**
 
 -In order to determine which user you are currently, you can navigate to the etc directory and open the `sudorers` file
@@ -191,7 +200,7 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 - `cat /etc/sudoers` If you are in the root directory then you can directly type 
 
-**Updating user by Giving existing user access to a new command**
+**Modifying/Updating user by Giving existing user access to a new command**
 
 - `sudoers` file can be edited by typing `visudo` in the terminal - This command is like the nano editor for sudoers file - just the visudo is sufficient- no need to add sudoers or file name
 
@@ -202,7 +211,7 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 - To exit the current user type `exit` then you will be taken to the root directory
 
-- type `visudo` to edit sudodoers
+- type `visudo` to edit sudoers
 
 - Now check to see if the command can be searched for the max user 
 `grep apt etc/sudoers` This would display the entire line of text from sudoers and you can see the max username. This is an important trick as essentially you can search for a specific comand in the sudoers to see which users have access to it
@@ -220,7 +229,7 @@ max  ALL=(ALL:ALL) /usr/bin/less
  - Here --remove-home refers to removing the folder of the username mkike from the home directory
 
 
-## `usermod` for Assigning grops to the users and locking an existing user
+## `usermod` for Assigning groups to the users and locking an existing user
 
 >  Assigning groups to to username using `-G` Note the capital letters
 
