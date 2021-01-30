@@ -15,6 +15,12 @@ I am writing this readme to reinforce and document things I leant during the Uni
 
 - When you are the root user nothing in the system will stop you- you wont be asked about any password prompts. 
 
+- In a general sense If we talk of one user with super control its the `root` and when we talk about a group of users with super control its the `admin`
+
+- The sudo command in that sense is kind of a user group to which users can be added- It adds another layer of security by prompting the user for a password 
+
+- Linus recognizes the users and user groups by their ids not the name root id is 0, administrative accounts are 1-999 and normal user account ids are usually 1000+
+
 ## File structure
 
 - Every file and program on Linux have permissions that can be controlled for a particular user
@@ -165,7 +171,27 @@ max  ALL=(ALL:ALL) /usr/bin/less
 ```
 - [`USER` or %`GROUP`]  `HOST`=(`USER`:`GROUP`) `COMMAND` this is the general format for permissions in sudoers. Also note that host is the machine itself which the admin can control e-g if there is a need to limit access to specific files on some machines
 
-## Giving existing user access to a new command
+
+
+## Admin CRUD functions: CREAT READ UPDATE AND DELETE functions in Linux
+
+**Creating a user or usergroup**
+
+
+
+
+**Reading existing user excess**
+
+-In order to determine which user you are currently, you can navigate to the etc directory and open the `sudorers` file
+-When you are in the etc directory, type
+
+- `cat sudoers` Here you can also use `more, less, tail` instead of `cat` as you prefer
+
+- you can also use `ls /home` to list all the user folders
+
+- `cat /etc/sudoers` If you are in the root directory then you can directly type 
+
+**Updating user by Giving existing user access to a new command**
 
 - `sudoers` file can be edited by typing `visudo` in the terminal - This command is like the nano editor for sudoers file - just the visudo is sufficient- no need to add sudoers or file name
 
@@ -182,5 +208,28 @@ max  ALL=(ALL:ALL) /usr/bin/less
 `grep apt etc/sudoers` This would display the entire line of text from sudoers and you can see the max username. This is an important trick as essentially you can search for a specific comand in the sudoers to see which users have access to it
 
 - Then re-test by running `su max` and then `sudo apt update` - Note that using sudo here is important
+
+
+
+**Deleting a user or usergroup**
+
+> `deluser` for Deleting a user 
+
+ `sudo deluser --remove-home mike`
+
+ - Here --remove-home refers to removing the folder of the username mkike from the home directory
+
+
+## `usermod` for Assigning grops to the users and locking an existing user
+
+>  Assigning groups to to username using `-G` Note the capital letters
+
+`sudo usermod -G mike mike`  Note that this is an interesting command. Here I have a username mike and I am assignining it to the group named mike as well. 
+
+> Locking `-L`
+
+`sudo usermod -G mike mike`
+
+
 
 
