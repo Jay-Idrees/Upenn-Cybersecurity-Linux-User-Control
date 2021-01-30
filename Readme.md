@@ -253,7 +253,7 @@ max  ALL=(ALL:ALL) /usr/bin/less
 - You can look at the file permissions by navigating to the folder and then typing:
 
 `ls -l` 
-Below is what it shows 
+Below is what it shows <br>
                                 size date+time of last modification and then file name
 - `-rw-r--r-- 1 sysadmin sysadmin 1489 Jan 20 16:22 0310_Dealer_schedule`
 
