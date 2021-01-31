@@ -134,7 +134,8 @@ Linux has its own command for installing packages like in npm instal for node pa
  - `whoami` Reveals the current username when this command is typed in the terminal
  - `su`  Switching users
  - `sudoers` file containing the list of users and descriptions of their access - must be used with cat, less etc 
- - `chown` Asigns uername to user folder
+ - `chmod` Changing the permissions RWX (4,3,1)
+ - `chown` Asigns uername to user folder- Changing the owner and group for a file
  - `exit` exits the user and takes you to the default user sysadmin 
  - `su -l` lists all the commands the exisiting user has access to
 
