@@ -199,6 +199,12 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 `chown -R mike: /home/mike`
  Here R is the recursive flag which ensures that all the files in the user's home folder as well 
+
+
+
+
+
+
 **Reading existing user excess**
 
 -In order to determine which user you are currently, you can navigate to the etc directory and open the `sudorers` file
@@ -228,6 +234,20 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 - Then re-test by running `su max` and then `sudo apt update` - Note that using sudo here is important
 
+
+
+> **Updating/Controling Permissions for the files**
+
+- You can inspect permissions for a folder or a file with `ls -l`
+
+- You will see permissions organized in 3 groups (rwx- read write execute, if - then it means that particular permission is absent or not allowed)
+
+`drwxr-xr-x 2 sysadmin sysadmin  4096 Jan 31 17:57 example-dir`
+
+- Permissions are arranged in the order of `owner-group-otherusers`
+
+- Above is the sample display of permissions folders that is created d= directory. 
+- Note that there are 9 permissions spots controling `rwxrwxrwx` The first 3 represents the permissions for the file `owner`, next 3 `group` and the last 3 for other `users`
 
 
 **Deleting a user or usergroup**
