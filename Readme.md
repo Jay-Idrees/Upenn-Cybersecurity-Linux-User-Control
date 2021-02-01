@@ -63,6 +63,8 @@ Folders:<br>
 - If a row in `/etc/shadow` contains a `*` instead of a password hash, that the user is not allowed to login.
   - This is usually implemented on a user reserved for the system, and not a _human_ user.
 
+- Note that all the groups are in `/etc/gshadow` file
+
   > Checking Logs
 
   `cd var/log`

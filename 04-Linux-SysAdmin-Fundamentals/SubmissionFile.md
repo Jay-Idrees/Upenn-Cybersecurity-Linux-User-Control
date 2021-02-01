@@ -5,20 +5,41 @@
 1. Permissions on `/etc/shadow` should allow only `root` read and write access.
 
     - Command to inspect permissions:
+    `ls -l /etc/shadow`
+
 
     - Command to set permissions (if needed):
+
+        - For file ownership and group assignment
+        `sudo chown root:root /etc/shadow`
+
 
 2. Permissions on `/etc/gshadow` should allow only `root` read and write access.
 
     - Command to inspect permissions:
 
+     `ls -l /etc/gshadow`
+
     - Command to set permissions (if needed):
+
+   - `sudo chown root:root /etc/gshadow` for  assigning ownership and group to root only
+   - `sudo chmod 644 /etc/gshadow`
+
 
 3. Permissions on `/etc/group` should allow `root` read and write access, and allow everyone else read access only.
 
     - Command to inspect permissions:
 
+    `ls -l /etc/group`
+
+
     - Command to set permissions (if needed):
+
+   - `sudo chown root:root /etc/group` for  assigning ownership and group to root only
+   - `sudo chmod 644 /etc/group`
+
+
+
 
 4. Permissions on `/etc/passwd` should allow `root` read and write access, and allow everyone else read access only.
 
