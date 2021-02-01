@@ -248,6 +248,11 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 - Above is the sample display of permissions folders that is created d= directory. 
 - Note that there are 9 permissions spots controling `rwxrwxrwx` The first 3 represents the permissions for the file `owner`, next 3 `group` and the last 3 for other `users`
+- You can also control the function by numbers: `1-execute` `2-write` `4-read` `- no permission,0` this assignment is fixed so that you can even use it in the commands
+- `4` is just read
+- `7` all 3, read(4), write(2) execute(1)
+- `6` read, write
+- `5` read,execute
 
 
 **Deleting a user or usergroup**
