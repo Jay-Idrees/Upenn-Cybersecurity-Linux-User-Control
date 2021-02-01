@@ -267,6 +267,19 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 - Then re-test by running `su max` and then `sudo apt update` - Note that using sudo here is important
 
+**GIVING ownership of a file to specific user or group**
+
+- Changing owner and group
+`sudo chown owner_username:group_name name_fileOrdr` 
+
+- Changing just the username
+`sudo chown username name_fileOrdr`
+
+- Changing just the group
+`sudo chown :groupname name_fileOrdr`
+
+- Removing the ownership and group assignment by assigining to root
+`sudo chown root:root name_fileOrdr`
 
 
 > **Updating/Controling Permissions for the files**
