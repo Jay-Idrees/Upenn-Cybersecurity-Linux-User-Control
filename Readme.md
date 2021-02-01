@@ -238,7 +238,7 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 > **Updating/Controling Permissions for the files**
 
-- You can inspect permissions for a folder or a file with `ls -l`
+- You can inspect permissions for a folder or a file with `ls -l` you can also add a specific file name to be exact `ls -l filename`
 
 - You will see permissions organized in 3 groups (rwx- read write execute, if - then it means that particular permission is absent or not allowed)
 
@@ -253,6 +253,23 @@ max  ALL=(ALL:ALL) /usr/bin/less
 - `7` all 3, read(4), write(2) execute(1)
 - `6` read, write
 - `5` read,execute
+
+> Changing the permissions on the files using `chmod` which stands for change mode
+
+- `sudo chmod 764 filename` This command is assigning all 3 rwx for the owner rw- to group and r-- to all other users
+
+- `-rwxrw-r-- 1 sysadmin sysadmin 0 Jan 31 17:57 example-file` This is what the command did
+
+
+- Alternatively `sudo chmod u=rwx, g=rw,o=r  filename` IMPORTANT, note that here u is the 'owner' and o is the 'other users' and g is the group. This command gives the same as above
+
+> Addiing and removing a particular permission from all categories ()
+
+- `sudo chmod +x filename` or `sudo chmod -x filename`
+
+
+
+
 
 
 **Deleting a user or usergroup**
