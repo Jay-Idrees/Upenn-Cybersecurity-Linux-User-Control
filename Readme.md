@@ -69,6 +69,39 @@ Folders:<br>
 
 - Some important files to keep in mind ` cd var/log/ufw.log` which stores attempts by the user to visit unauthorized websites and `cd var/log/auth.log` which stores infomation regarding failed login attempts to login as root
 
+
+**SEARCHING FILES AND THE GROUPS in SYSTEM FILES and then changing Permissions**
+
+> Checking permissions
+
+- Common files to check permissions on - This is when you already know the file name and their exact path
+`ls -l /etc/shadow` You can type no matter which directory you are in currently
+`ls -l /etc/gshadow` This is for inspecting permissions for the shadow file containing the groups
+`ls -l /etc/passwd` permissions for the passwd file
+`ls -l /etc/group` permissions for the group folder
+
+- Searching users by permissions with `grep`
+
+- Checking root `sudo grep root /etc/shadow` will show `root:!:18212:0:99999:7:::`
+- Checking all users/groups with missing passwords `sudo grep "!" /etc/shadow` will show: ! is the missins password indicator
+
+```
+[sudo] password for sysadmin: 
+root:!:18212:0:99999:7:::
+speech-dispatcher:!:18113:0:99999:7:::
+vboxadd:!:18212::::::
+```
+CHecking who is assigned the userid of 0 - to make sure that only root has that username assigned
+
+- `grep "x:0" /etc/passwd` for finding and then using nano to edit
+- `sudo nano /etc/passwd`
+
+> Setting permissions to 600 so that only the owner has the access to read write or execute(if applicable)
+
+
+
+
+
 # Managing the Processes in Linux
 
 Three commands to keep in mind:
