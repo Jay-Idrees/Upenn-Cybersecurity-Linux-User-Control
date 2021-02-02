@@ -211,7 +211,24 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 ## Adding a user to the sudo group
 
-`sudo usermod -aG sudo sally` aG asign group. Note that the sudo privilidges are also configured in the sudoers file
+- `sudo usermod -aG sudo sally` aG asign group. Note that the sudo privilidges are also configured in the sudoers file. Note that -G alone will also work
+
+**Adding a user to any group**
+- `sudo usermod -G engineers sally` Here sally is being added to the usergroup 
+
+**Removing the user from a pre-assigned group**
+- `sudo usermod -G username username` Here the first 'username' is the group folder of the username's folder itself and the 2nd username is the username  e-g it could be mike mike. As I do not include another group like engineers, if mike was previously assigned engineers then it will automatically get removed 
+
+**Searching a group to see how many users are added to it**
+- `grep engineers /etc/group` or you can also search using the username
+- `grep username /etc/group`
+
+**Searching a username and then seeing what groups a user is part of**
+- `groups username`
+
+**Linking a group name to a group folder**
+- `sudo chown :engineers engineers`
+
 
 ## Admin CRUD functions: CREAT READ UPDATE AND DELETE functions in Linux
 
@@ -232,7 +249,7 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 - Giving the mike username access to the mike folder
 
-`chown -R mike: /home/mike`
+`chown -R :mike /home/mike`
  Here R is the recursive flag which ensures that all the files in the user's home folder as well 
 
 
