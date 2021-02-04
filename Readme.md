@@ -82,6 +82,8 @@ Folders:<br>
 `ls -l /etc/passwd` permissions for the passwd file
 `ls -l /etc/group` permissions for the group folder
 
+- You can also check who has sudo access by typing `sudo su -l`
+
 - Searching users by permissions with `grep`
 
 - Checking root `sudo grep root /etc/shadow` will show `root:!:18212:0:99999:7:::`
@@ -211,7 +213,9 @@ max  ALL=(ALL:ALL) /usr/bin/less
 
 ## Adding a user to the sudo group
 
-- `sudo usermod -aG sudo sally` aG asign group. Note that the sudo privilidges are also configured in the sudoers file. Note that -G alone will also work
+- You can check who/which user has sudo access by typing `sudo su -l`
+
+- `sudo usermod -aG ebsudo sally` aG asign group. Note that the sudo privilidges are also configured in the sudoers file. Note that -G alone will also work
 
 **Adding a user to any group**
 - `sudo usermod -G engineers sally` Here sally is being added to the usergroup 
